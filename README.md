@@ -76,16 +76,18 @@ cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 kubectl apply -f calico.yaml
 ```
 ### (3)安装完成保留token
-![image](http://note.youdao.com/favicon.ico)
+![node-token](https://github.com/jishandong/kubernetes-v1.8.1-install-scripts/blob/master/token.jpg)
 ## 4、node节点的安装
 - [root@production-k8s-node1 kubeadm]# sh init-node.sh
+
+![node-status](https://github.com/jishandong/kubernetes-v1.8.1-install-scripts/blob/master/node-done.jpg)
 
 ### (1)node节点上执行命令将node节点加入集群
 
 - [root@production-k8s-node1 kubeadm]#kubeadm join --token 69405c.e807e4e581cf15a3 10.10.10.13:6443 --discovery-token-ca-cert-hash sha256:bd4118f1b23cac27e597fd9d21bcd229c9a2a737b98cd456ac3f78d2000874d8
 
 ### (2)master上查看node状态
-![image](http://note.youdao.com/favicon.ico)
+![node-done](https://github.com/jishandong/kubernetes-v1.8.1-install-scripts/blob/master/node-states.jpg)
 
 
 
